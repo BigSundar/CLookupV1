@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Crime Lookup
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-list >
+  <ion-item>
+  <ion-select aria-label="fruit" placeholder="Select Crime" [(ngModel)]="crime">
+    <ion-list *ngFor="let crime of crimeCategory">
+      <ion-select-option >{{crime.url}}</ion-select-option>
+    </ion-list>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-select aria-label="fruit" placeholder="Select Date" [(ngModel)]="date" >
+    <ion-list *ngFor="let date of crimedate">
+      <ion-select-option >{{date.date}}</ion-select-option>
+    </ion-list>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-select aria-label="fruit" placeholder="Select County" [(ngModel)]="county">
+    <ion-list *ngFor="let coordinate of coordinates">
+      <ion-select-option >{{coordinate.County}}</ion-select-option>
+    </ion-list>
+  </ion-select>
+</ion-item>
+ </ion-list> 
+ <ion-button (click)="takedata()">Take data</ion-button>
+ <ion-item>
+  <ion-text>Total Crime {{totalcrime}}</ion-text>
+ </ion-item> 
+</ion-content>
+
